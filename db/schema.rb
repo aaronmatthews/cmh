@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303225135) do
+ActiveRecord::Schema.define(:version => 20120304223122) do
+
+  create_table "accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.decimal  "starting_balance", :precision => 12, :scale => 2, :default => 0.0
+    t.decimal  "current_balance",  :precision => 12, :scale => 2, :default => 0.0
+    t.decimal  "avg_daily_in",     :precision => 12, :scale => 2, :default => 0.0
+    t.decimal  "avg_daily_out",    :precision => 12, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

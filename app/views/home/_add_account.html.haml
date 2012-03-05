@@ -1,0 +1,4 @@
+= form_for @new_account, :html => { :class => "form-inline"} do |f|
+  = f.text_field :name, :placeholder => "Name"
+  = f.text_field :current_balance, :class => 'input-mini', :placeholder => "Balance"
+  = f.submit :save, :class => "btn-primary"

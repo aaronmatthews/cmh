@@ -1,6 +1,31 @@
-%h1 Welcome.
+.row
+  .span5
+    - if current_user.accounts.count > 0
+      %h3 Current Accounts
+      %table.table
+        %tbody
+          = render :partial => "account", :collection => current_user.accounts
+          %tr
+            %td{:colspan => '3'}
+              = render :partial => "add_account"
+    - else
+      = render :partial => "add_account"
+  .span5
+    %h3 Activity
+    %table.table
+      %thead
+        %tr
+          %th Date
+          %th Name
+          %th Amount
+          %th Action
+      %tbody
+        %tr
+          %td 2/23
+          %td Rent
+          %td ($1,600)
+          %td
+            %a.btn Accept
 
-- if user_signed_in?
-  %h2 You are logged in.
-- else
-  %h2 You are not logged in.
+    = render :partial => "add_activity"
+

@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe HomeController do
+
+  let(:user) { FactoryGirl.build(:user) }
+
   context 'user is logged in' do
-    before do
-      let(:user) { FactoryGirl.build(:user) }
-    end
     it 'forwards user to dashboard' do
       pending 'to be added'
     end

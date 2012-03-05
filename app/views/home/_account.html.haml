@@ -1,0 +1,7 @@
+%tr{:id => "#{dom_id(account)}" }
+%td= account.name
+%td
+  %span{:id => "account#{account.id}", :class => "rest-in-place", :'data-formtype' => "input", :'data-attribute' => "current_balance"}
+    = number_to_currency(account.current_balance)
+%td= link_to("delete", account_path(account), {:confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger btn-mini"})
+

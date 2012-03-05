@@ -1,0 +1,5 @@
+= form_for @new_activity, :html => { :class => "form-inline"} do |f|
+  = f.text_field :name, :placeholder => "Name"
+  = f.text_field :amount, :class => 'input-mini', :placeholder => "amount"
+  = f.text_area :description, :class => ""
+  = f.submit :save, :class => "btn-primary"
